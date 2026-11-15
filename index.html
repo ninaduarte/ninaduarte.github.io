@@ -3,131 +3,176 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nina Duarte | Achadinhos</title>
-<meta name="description" content="Todo dia fico de olho nos preços de beleza e moda e só te aviso quando a queda é de verdade. Entre grátis no canal do WhatsApp ou do Telegram.">
-<meta name="theme-color" content="#FFF7ED">
-<meta property="og:title" content="Nina Duarte | Achadinhos">
-<meta property="og:description" content="Quedas de preço de verdade em beleza e moda. Entre grátis no canal do WhatsApp ou do Telegram.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://ninaduarte.github.io/">
-<meta property="og:image" content="https://ninaduarte.github.io/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="logo.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap">
+<title>Link da Nina</title>
+<meta name="description" content="Cole o link de um produto da Shopee e receba o link da Nina para comprar pelo mesmo preço.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23ee4d2d'/%3E%3Ctext x='32' y='42' font-size='30' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3EN%3C/text%3E%3C/svg%3E">
 <style>
-  /* Página de links da Nina (o "link na bio"). Mesma marca do vídeo e dos
-     posts: cores chapadas, Nunito, sem gradiente nem sombra. A exceção são os
-     botões, nas cores do WhatsApp e do Telegram (pedido do dono), num tom
-     que ainda deixa o texto branco legível. */
   :root {
-    --creme: #FFF7ED;
-    --branco: #FFFFFF;
-    --coral: #EF542F;
-    --ameixa: #30203D;
-    --ameixa-suave: #6B5A73;
-    --whatsapp: #1DA851;
-    --telegram: #229ED9;
+    --fundo: #fff7f4; --cartao: #ffffff; --texto: #2b1a16; --suave: #7a5a52; --borda: #f0d9d1;
+    --laranja: #ee4d2d; --laranja-escuro: #c93a1d; --ok: #1f8a4c; --erro: #b3261e; --campo: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --fundo: #1a110e; --cartao: #261a16; --texto: #fbeee9; --suave: #c9aaa0; --borda: #3d2a24;
+      --laranja: #ff6a4a; --laranja-escuro: #ee4d2d; --ok: #5ccf86; --erro: #ff8a80; --campo: #1f1511;
+    }
+  }
+  :root[data-theme="dark"] {
+    --fundo: #1a110e; --cartao: #261a16; --texto: #fbeee9; --suave: #c9aaa0; --borda: #3d2a24;
+    --laranja: #ff6a4a; --laranja-escuro: #ee4d2d; --ok: #5ccf86; --erro: #ff8a80; --campo: #1f1511;
   }
   * { box-sizing: border-box; }
-  html { background: var(--creme); }
-  body {
-    margin: 0;
-    min-height: 100vh;
-    background: var(--creme);
-    color: var(--ameixa);
-    font-family: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
-    font-weight: 600;
-    display: grid;
-    place-items: start center;
-    padding-block: 56px 40px;
-    padding-inline: 20px;
-  }
-  main { width: 100%; max-width: 420px; display: grid; gap: 28px; }
-  .marca { display: grid; justify-items: center; gap: 22px; text-align: center; }
-  .marca img { width: 220px; height: auto; display: block; }
-  h1 {
-    margin: 0;
-    font-size: 30px;
-    line-height: 1.15;
-    font-weight: 900;
-    letter-spacing: -0.01em;
-    text-wrap: balance;
-  }
-  h1 em { font-style: normal; color: var(--coral); }
-  .intro { margin: 0; font-size: 17px; line-height: 1.5; color: var(--ameixa-suave); max-width: 34ch; }
-  .canais { display: grid; gap: 14px; }
-  .canal {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    min-height: 76px;
-    padding: 14px 22px 14px 16px;
-    border-radius: 999px;
-    color: var(--branco);
-    text-decoration: none;
-    transition: transform 0.15s ease;
-  }
-  .canal:hover { transform: translateY(-2px); }
-  .canal:focus-visible { outline: 3px solid var(--ameixa); outline-offset: 4px; }
-  .canal.whatsapp { background: var(--whatsapp); }
-  .canal.telegram { background: var(--telegram); }
-  .icone {
-    flex: none;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: var(--branco);
-    display: grid;
-    place-items: center;
-  }
-  .canal.whatsapp .icone { color: var(--whatsapp); }
-  .canal.telegram .icone { color: var(--telegram); }
-  .icone svg { width: 26px; height: 26px; }
-  .rotulo { flex: 1; display: grid; gap: 2px; }
-  .rotulo strong { font-size: 19px; font-weight: 900; line-height: 1.2; }
-  .rotulo span { font-size: 14px; opacity: 0.85; }
-  .seta { flex: none; width: 22px; height: 22px; }
-  .nota { margin: 0; text-align: center; font-size: 15px; line-height: 1.5; color: var(--ameixa-suave); }
-  footer { text-align: center; font-size: 13px; color: var(--ameixa-suave); display: grid; gap: 4px; }
-  .brilho { width: 18px; height: 18px; display: inline-block; vertical-align: -3px; }
-  @media (prefers-reduced-motion: reduce) { .canal { transition: none; } .canal:hover { transform: none; } }
+  body { margin: 0; background: var(--fundo); color: var(--texto); font: 17px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 520px; margin: 0 auto; padding: 32px 16px 48px; }
+  header { text-align: center; margin-bottom: 24px; }
+  .avatar { width: 84px; height: 84px; border-radius: 50%; background: var(--laranja); color: #fff; display: inline-grid; place-items: center; font-weight: 800; font-size: 38px; margin-bottom: 10px; }
+  h1 { font-size: 26px; margin: 0 0 6px; }
+  header p { margin: 0; color: var(--suave); }
+  .cartao { background: var(--cartao); border: 1px solid var(--borda); border-radius: 18px; padding: 20px; }
+  label { display: block; font-weight: 600; margin-bottom: 8px; }
+  textarea { width: 100%; min-height: 96px; resize: vertical; padding: 12px 14px; font: inherit; color: var(--texto); background: var(--campo); border: 1.5px solid var(--borda); border-radius: 12px; }
+  textarea:focus { outline: none; border-color: var(--laranja); }
+  .linha { display: flex; gap: 10px; margin-top: 12px; }
+  button { font: inherit; font-weight: 700; border: 0; border-radius: 12px; padding: 13px 18px; cursor: pointer; }
+  .primario { flex: 1; background: var(--laranja); color: #fff; }
+  .primario:hover { background: var(--laranja-escuro); }
+  .secundario { background: transparent; color: var(--laranja); border: 1.5px solid var(--laranja); }
+  .msg { margin-top: 14px; min-height: 24px; font-size: 15px; }
+  .msg.erro { color: var(--erro); }
+  .msg.ok { color: var(--ok); }
+  #resultado { display: none; margin-top: 18px; padding-top: 18px; border-top: 1px dashed var(--borda); }
+  #link { width: 100%; padding: 12px 14px; font: 15px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--texto); background: var(--campo); border: 1.5px solid var(--borda); border-radius: 12px; word-break: break-all; }
+  .acoes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+  .acoes a { display: grid; place-items: center; text-decoration: none; }
+  .como { margin-top: 22px; color: var(--suave); font-size: 15px; }
+  .como ol { padding-left: 20px; margin: 8px 0 0; }
+  .como li { margin-bottom: 4px; }
+  footer { text-align: center; color: var(--suave); font-size: 13px; margin-top: 28px; }
 </style>
 </head>
 <body>
 <main>
-  <header class="marca">
-    <img src="logo.svg" alt="Nina Duarte" width="220" height="72">
-    <h1>Achados de <em>beleza e moda</em></h1>
-    <p class="intro">Oi, eu sou a Nina 🧡 Todo dia fico de olho nos preços e só te aviso quando a queda é de verdade.</p>
+  <header>
+    <div class="avatar" aria-hidden="true">N</div>
+    <h1>Vai comprar na Shopee?</h1>
+    <p>Cola o link do produto aqui e compra pelo link da Nina. O preço é o mesmo, e você ajuda o canal.</p>
   </header>
 
-  <nav class="canais" aria-label="Canais da Nina">
-    <a class="canal whatsapp" href="https://whatsapp.com/channel/0029Vb99Kek4NVie7h3a5N3t" rel="noopener">
-      <span class="icone" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.26-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
-      </span>
-      <span class="rotulo"><strong>Canal no WhatsApp</strong><span>Grátis · ative as notificações</span></span>
-      <svg class="seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
-    </a>
-    <a class="canal telegram" href="https://t.me/ninaduarte" rel="noopener">
-      <span class="icone" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3a1.2 1.2 0 0 0-1.64-1.1L2.9 10a1.2 1.2 0 0 0 .08 2.26l4.4 1.37 1.7 5.4a1.2 1.2 0 0 0 2 .5l2.46-2.4 4.36 3.2a1.2 1.2 0 0 0 1.88-.72L21.94 4.3ZM9.62 13.58l8.2-6.1-6.5 7.2-.3 3.02-1.4-4.12Z"/></svg>
-      </span>
-      <span class="rotulo"><strong>Canal no Telegram</strong><span>Grátis · as mesmas ofertas</span></span>
-      <svg class="seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
-    </a>
-  </nav>
+  <section class="cartao">
+    <label for="entrada">Link do produto na Shopee</label>
+    <textarea id="entrada" placeholder="Cole aqui o link copiado da Shopee" autocomplete="off" spellcheck="false"></textarea>
+    <div class="linha">
+      <button class="primario" id="gerar" type="button">Gerar link da Nina</button>
+      <button class="secundario" id="colar" type="button" title="Colar da área de transferência">Colar</button>
+    </div>
+    <div class="msg" id="msg" aria-live="polite"></div>
 
-  <p class="nota">As ofertas chegam nos dois canais. Escolha o app que você mais usa.</p>
+    <div id="resultado">
+      <label for="link">Seu link, pronto</label>
+      <div id="link"></div>
+      <div class="acoes">
+        <button class="primario" id="copiar" type="button">Copiar</button>
+        <a class="secundario" id="abrir" href="#" target="_blank" rel="noopener">Abrir na Shopee</a>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    <span><svg class="brilho" viewBox="-24 -24 48 48" aria-hidden="true"><path d="M0 -24Q4 -4 24 0Q4 4 0 24Q-4 4 -24 0Q-4 -4 0 -24Z" fill="#EF542F"/></svg> Nina Duarte · Achados no grupo</span>
-    <span>Perfil gerado por IA</span>
-  </footer>
+  <div class="como">
+    <strong>Como pegar o link na Shopee</strong>
+    <ol>
+      <li>Abra o produto no app ou no site da Shopee.</li>
+      <li>Toque em compartilhar e escolha "Copiar link".</li>
+      <li>Volte aqui, cole e toque em "Gerar link da Nina".</li>
+    </ol>
+    <p>Links curtos (s.shopee.com.br ou shope.ee) de outras pessoas não servem: abra o produto e copie o link de novo.</p>
+  </div>
+
+  <footer>Nada é salvo nesta página. O link é montado no seu aparelho.</footer>
 </main>
+
+<script>
+(function () {
+  var AFILIADO = "18379981199";
+  var SUB_PADRAO = "bio";
+  var DOMINIOS = ["shopee.com.br", "www.shopee.com.br", "pt.shopee.com.br", "mall.shopee.com.br"];
+  var CURTOS = ["s.shopee.com.br", "shope.ee", "shp.ee"];
+
+  var entrada = document.getElementById("entrada");
+  var msg = document.getElementById("msg");
+  var resultado = document.getElementById("resultado");
+  var linkEl = document.getElementById("link");
+  var abrir = document.getElementById("abrir");
+
+  var sub = new URLSearchParams(location.search).get("sub") || SUB_PADRAO;
+  sub = sub.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 50) || SUB_PADRAO;
+
+  function aviso(texto, tipo) { msg.textContent = texto; msg.className = "msg " + (tipo || ""); }
+
+  function extrairUrl(texto) {
+    var m = texto.match(/https?:\/\/[^\s<>"]+/i);
+    return m ? m[0].replace(/[),.;!?]+$/, "") : null;
+  }
+
+  function limpar(urlTexto) {
+    var u;
+    try { u = new URL(urlTexto); } catch (e) { return { erro: "Isso não parece um link. Copie o link do produto na Shopee e cole aqui." }; }
+    var host = u.hostname.toLowerCase();
+    if (CURTOS.indexOf(host) >= 0) {
+      return { erro: "Esse é um link curto. Abra o produto na Shopee, toque em compartilhar e copie o link de novo." };
+    }
+    if (DOMINIOS.indexOf(host) < 0) {
+      return { erro: "Por enquanto só funciona com link da Shopee Brasil (shopee.com.br)." };
+    }
+    var caminho = u.pathname;
+    var produto = /\/product\/\d+\/\d+/.test(caminho) || /-i\.\d+\.\d+$/.test(caminho) || /\/universal-link\//.test(caminho);
+    if (!produto) {
+      return { erro: "Esse link não é de um produto. Abra o produto na Shopee e copie o link dele." };
+    }
+    // Sem parâmetros: tira rastreio de outra pessoa e deixa só o produto.
+    return { url: "https://shopee.com.br" + caminho };
+  }
+
+  function gerar() {
+    var texto = entrada.value.trim();
+    resultado.style.display = "none";
+    if (!texto) { aviso("Cole o link do produto primeiro.", "erro"); return; }
+    var bruto = extrairUrl(texto);
+    if (!bruto) { aviso("Não achei um link no que você colou.", "erro"); return; }
+    var r = limpar(bruto);
+    if (r.erro) { aviso(r.erro, "erro"); return; }
+    var final = "https://s.shopee.com.br/an_redir?origin_link=" + encodeURIComponent(r.url) +
+                "&affiliate_id=" + AFILIADO + "&sub_id=" + encodeURIComponent(sub);
+    linkEl.textContent = final;
+    abrir.href = final;
+    resultado.style.display = "block";
+    aviso("Pronto. Copie ou abra direto na Shopee.", "ok");
+  }
+
+  document.getElementById("gerar").addEventListener("click", gerar);
+  entrada.addEventListener("keydown", function (e) { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); gerar(); } });
+
+  document.getElementById("colar").addEventListener("click", function () {
+    if (!navigator.clipboard || !navigator.clipboard.readText) { aviso("Seu navegador não deixa colar automático. Cole no campo com o dedo.", "erro"); entrada.focus(); return; }
+    navigator.clipboard.readText().then(function (t) { entrada.value = t; gerar(); })
+      .catch(function () { aviso("Não consegui ler a área de transferência. Cole no campo.", "erro"); entrada.focus(); });
+  });
+
+  document.getElementById("copiar").addEventListener("click", function () {
+    var t = linkEl.textContent;
+    function ok() { aviso("Link copiado. Agora é só abrir na Shopee.", "ok"); }
+    function falha() {
+      var faixa = document.createRange(); faixa.selectNodeContents(linkEl);
+      var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(faixa);
+      aviso("Selecionei o link. Toque e segure para copiar.", "ok");
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(ok, falha); else falha();
+  });
+
+  // Link vindo pelo endereço (?u=...) já gera na hora.
+  var pre = new URLSearchParams(location.search).get("u");
+  if (pre) { entrada.value = pre; gerar(); }
+})();
+</script>
 </body>
 </html>
